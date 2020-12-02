@@ -10,7 +10,11 @@ body {
     resize: none;
     color: #000000;
     border-left: 1px solid black;
-    padding: 10px;
+    padding: 2%;
+    float: left;
+    width: 70%; 
+    margin-left: 2%;
+    margin-bottom: 6%;
   }
   
   .jumbotron {
@@ -27,13 +31,30 @@ body {
   
   .time-block{
     text-align: center;
-    border-radius: 15px;
+    border: #998e8d solid 1px;
+    border-radius: 15px; 
   }
   
   .row {
     white-space: pre-wrap;
-    height: 80px;
-    border-top: 1px solid white;;
+    height: min-content;
+    border-top: 1px solid white;
+    margin: 1% auto;
+  }
+
+  h6 {
+      height: min-content;
+      margin-top: 6%;
+      padding: 0%;
+      float: left;
+  }
+
+  .icon-container {
+      text-align: center;
+  }
+
+  .fa-save {
+      min-width: 90%;
   }
   
   .hour {
@@ -73,4 +94,6 @@ body {
   .timeblocks {
       border: #998e8d solid 1px;
       border-radius: 4%;
+      margin-top: 10px;
+      margin-bottom: 10px;
   }
