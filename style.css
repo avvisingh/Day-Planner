@@ -69,3 +69,8 @@ body {
     font-size: 20px;
     transition: all .3s ease-in-out;
   }
+
+  .timeblocks {
+      border: #998e8d solid 1px;
+      border-radius: 4%;
+  }
