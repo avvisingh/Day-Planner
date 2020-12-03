@@ -1,3 +1,4 @@
+//Loading the document, the localStorage items will be placed into their respective divs
 $(document).ready(() => {
     for (let j = 9; j <= 16; j++) {
         if (localStorage.getItem(`event${j}`)) {
@@ -53,5 +54,13 @@ for (let j = 9; j <= 16; j++) {
         localStorage.setItem(`event${j}`, userText);
     })
 }
+
+//All events will be wiped at the end of the day
+if ($m > 16) {
+    for (let j = 9; j <= 16; j++) {
+        $(`textarea#text-area-${j}`).text('');
+        localStorage.removeItem(`event${j}`);
+    }
+};
 
 
