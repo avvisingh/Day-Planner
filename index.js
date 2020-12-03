@@ -30,13 +30,19 @@ for (i = 9; i <= 16; i++) {
 };
 
 //Assigning event listeners to the icons
-for (i = 9; i <= 16; i++) {
-    let $selectedIcon = `div#save-button-${i}`;
-    let $selectedTextArea = `textarea#text-area-${i}`;
+for (let j = 9; j <= 16; j++) {
+    let $selectedIcon = `button#save-button-${j}`;
+    let $selectedTextArea = `textarea#text-area-${j}`;
+    let userText;
 
-    $($selectedTextArea.toString()).on('keypress', () => {
-        let eventText = $($selectedTextArea.toString()).val();
-        console.log(eventText);
+    $($selectedTextArea.toString()).keyup(() => {
+        userText = $($selectedTextArea.toString()).val();
+        console.log(userText);
+    })
+
+    $($selectedIcon.toString()).on('click', () => {
+        console.log(`button ${j} has been clicked`);
+        localStorage.setItem(`event${j}`, userText);
     })
 }
 
