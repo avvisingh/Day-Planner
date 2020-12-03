@@ -13,11 +13,6 @@ console.log($currentTime);
 var $m = moment().format('HH');
 console.log(`m = ${$m}`);
 
-// const A = 10;
-// const selection = `div#time-display-${A}`;
-// console.log(selection);
-// $(selection.toString()).html('<p>Avvi</p>');
-
 
 //Assigning background colours to the event sections based on the time
 var i;
@@ -33,5 +28,16 @@ for (i = 9; i <= 16; i++) {
         $(selection.toString()).css('background-color', 'rgba(63, 114, 232, 0.4)');
     }
 };
+
+//Assigning event listeners to the icons
+for (i = 9; i <= 16; i++) {
+    let $selectedIcon = `div#save-button-${i}`;
+    let $selectedTextArea = `textarea#text-area-${i}`;
+
+    $($selectedTextArea.toString()).on('keypress', () => {
+        let eventText = $($selectedTextArea.toString()).val();
+        console.log(eventText);
+    })
+}
 
 
