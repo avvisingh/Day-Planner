@@ -1,3 +1,12 @@
+$(document).ready(() => {
+    for (let j = 9; j <= 16; j++) {
+        if (localStorage.getItem(`event${j}`)) {
+            let savedEvent = localStorage.getItem(`event${j}`);
+            $(`textarea#text-area-${j}`).text(savedEvent);
+        }
+    }
+})
+
 //Selecting the <p> in the header with the currentDay id
 const $currentDayTime = $('#currentDay');
 
@@ -15,8 +24,7 @@ console.log(`m = ${$m}`);
 
 
 //Assigning background colours to the event sections based on the time
-var i;
-for (i = 9; i <= 16; i++) {
+for (let i = 9; i <= 16; i++) {
     let selection = `div#event-display-${i}`;
     console.log(selection);
 
