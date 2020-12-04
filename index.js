@@ -50,8 +50,13 @@ for (let j = 9; j <= 16; j++) {
     })
 
     $($selectedIcon.toString()).on('click', () => {
-        console.log(`button ${j} has been clicked`);
-        localStorage.setItem(`event${j}`, userText);
+        if (!userText) {
+            console.log('There is no text input, the click will not register');
+            return;
+        } else {
+            console.log(`button ${j} has been clicked`);
+            localStorage.setItem(`event${j}`, userText);
+        }
     })
 }
 
