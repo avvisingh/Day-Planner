@@ -70,6 +70,15 @@ body {
   .save-button {
       height: min-content;
   }
+
+  .save-button {
+      border: #999091 solid 0.5px;
+      border-radius: 5%;
+  }
+
+  .save-button:hover {
+      background: rgba(35, 196, 108, 0.7);
+  }
   
 
   
