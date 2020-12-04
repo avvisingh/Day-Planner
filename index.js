@@ -48,7 +48,6 @@ for (let j = 9; j <= 16; j++) {
 
     $($selectedIcon.toString()).on('click', () => {
         if (!userText && !hasTyped) {
-            console.log('No text entered - this click will not register')
             return;
         } else {
             localStorage.setItem(`event${j}`, userText);
