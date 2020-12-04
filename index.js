@@ -14,20 +14,16 @@ const $currentDayTime = $('#currentDay');
 //Setting the Current Date and Time display in the <header>
 let $currentDateTime = moment().format('MMMM Do YYYY, h:mm a');
 $currentDayTime.text($currentDateTime);
-console.dir($currentDateTime);
 
 let $currentTime = moment().format('LT');
-console.log($currentTime);
 
 //Assigning background colours to the event sections based on the time
 var $m = moment().format('HH');
-console.log(`m = ${$m}`);
 
 
 //Assigning background colours to the event sections based on the time
 for (let i = 9; i <= 16; i++) {
     let selection = `div#event-display-${i}`;
-    console.log(selection);
 
     if ($m == i) {
         $(selection.toString()).css('background-color', 'rgba(63, 232, 148, 0.4)');
@@ -43,18 +39,18 @@ for (let j = 9; j <= 16; j++) {
     let $selectedIcon = `button#save-button-${j}`;
     let $selectedTextArea = `textarea#text-area-${j}`;
     let userText;
+    var hasTyped = false;
 
     $($selectedTextArea.toString()).keyup(() => {
+        hasTyped = true;
         userText = $($selectedTextArea.toString()).val();
-        console.log(userText);
     })
 
     $($selectedIcon.toString()).on('click', () => {
-        if (!userText) {
-            console.log('There is no text input, the click will not register');
+        if (!userText && !hasTyped) {
+            console.log('No text entered - this click will not register')
             return;
         } else {
-            console.log(`button ${j} has been clicked`);
             localStorage.setItem(`event${j}`, userText);
         }
     })
